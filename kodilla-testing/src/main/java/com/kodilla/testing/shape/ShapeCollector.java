@@ -6,11 +6,9 @@ import java.util.List;
 class ShapeCollector {
 
     private List<Shape> shapes = new ArrayList<>();
-    private Shape shape;
-    private String names;
+    private String names = "";
 
     public void addFigure(Shape shape) {
-        this.shape = shape;
         shapes.add(shape);
     }
     public boolean removeFigure(Shape shape) {
