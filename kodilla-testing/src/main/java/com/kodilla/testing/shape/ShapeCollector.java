@@ -6,7 +6,6 @@ import java.util.List;
 class ShapeCollector {
 
     private List<Shape> shapes = new ArrayList<>();
-    private String names = "";
 
     public void addFigure(Shape shape) {
         shapes.add(shape);
@@ -23,6 +22,7 @@ class ShapeCollector {
         return shapes.get(n);
     }
     public String showFigures() {
+        String names = "";
         for (int i = 0; i < shapes.size(); i++) {
             names = names + shapes.get(i).getShape();
         }
