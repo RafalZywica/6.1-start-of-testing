@@ -47,7 +47,7 @@ class WeatherForecastTestSuite {
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
-        List<Double> a = new ArrayList<Double>(temperaturesMap.values());
+        List<Double> a = new ArrayList<Double>(weatherForecast.calculateForecast().values());
         Double sum = 0.0;
         for(Double position:a) {
             sum = sum + position;
@@ -56,14 +56,16 @@ class WeatherForecastTestSuite {
         System.out.println("Average temperature equals: " + average);
 
         //Then
-        Assertions.assertEquals((25.5 + 26.2 + 24.8 + 25.2 + 26.1) / 5.0, average);
+        Assertions.assertEquals(26.56, average, 0.01);
     }
     @Test
     void testCalculateMedian() {
         //Given
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
-        List<Double> a = new ArrayList<Double>(temperaturesMap.values());
+        List<Double> a = new ArrayList<Double>(weatherForecast.calculateForecast().values());
         Collections.sort(a);
         Double sum = 0.0;
         Double median;
@@ -75,6 +77,6 @@ class WeatherForecastTestSuite {
         System.out.println("Median of temperatures equals: " + median);
 
         //Then
-        Assertions.assertEquals(25.5, median);
+        Assertions.assertEquals(26.5, median);
     }
 }
