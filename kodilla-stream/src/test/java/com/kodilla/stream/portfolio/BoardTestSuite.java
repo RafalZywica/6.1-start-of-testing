@@ -3,6 +3,7 @@ package com.kodilla.stream.portfolio;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -157,11 +158,11 @@ class BoardTestSuite {
                 .collect(Collectors.toList());
 
         double average = IntStream.range(0, listForAverage.size())
-                .map(n -> listForAverage.get(n))
+                .mapToLong(n -> ChronoUnit.DAYS.between(listForAverage.get(n).getCreated(), (LocalDate.now())))
                 .average().getAsDouble();
 
         //Then
-        assertEquals(9.0, average, 0);
+        assertEquals(10.0, average, 0);
 
     }
 }
