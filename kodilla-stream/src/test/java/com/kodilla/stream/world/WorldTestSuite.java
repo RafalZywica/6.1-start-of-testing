@@ -30,15 +30,15 @@ public class WorldTestSuite {
         world.addContinent(europe);
         world.addContinent(northAmerica);
         //When
-        BigDecimal totalPop = world.getContinents().stream()
+        /*BigDecimal totalPop = world.getContinents().stream()
                 .flatMap(continent -> continent.getCountries().stream())
                 .map(country -> country.getPeopleQuantity())
-                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
+                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));*/
 
-        /*BigDecimal estimated = world.getPeopleQuantity();*/
+        BigDecimal estimated = world.getPeopleQuantity(world);
 
         //Then
-        assertEquals(new BigDecimal("613000000"), totalPop);
+        assertEquals(new BigDecimal("613000000"), estimated);
     }
 
 }
