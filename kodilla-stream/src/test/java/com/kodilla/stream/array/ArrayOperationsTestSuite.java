@@ -13,7 +13,7 @@ public class ArrayOperationsTestSuite {
         //When
         double average = new ArrayOperations1().getAverage(array);
         //Then
-        assertEquals(55.0, average);
+        assertEquals(55.0, average, 0);
 
     }
 }
