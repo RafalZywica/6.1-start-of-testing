@@ -11,9 +11,9 @@ public class ArrayOperationsTestSuite {
         //Before
         int[] array = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
         //When
-        double average = new ArrayOperations1().getAverage(array);
+        double average1 = ArrayOperations.getAverage(array);
         //Then
-        assertEquals(55.0, average, 0);
+        assertEquals(55.0, average1, 0);
 
     }
 }
