@@ -18,21 +18,27 @@ public class WorldTestSuite {
 
         Continent northAmerica = new Continent();
         Continent europe = new Continent();
-
-        //When
-        northAmerica.countries.add(USA);
-        northAmerica.countries.add(mexico);
-
-        europe.countries.add(poland);
-        europe.countries.add(germany);
-        europe.countries.add(france);
-
         World world = new World();
 
-        BigDecimal estimated = world.getPeopleQuantity();
+        northAmerica.addCountry(USA);
+        northAmerica.addCountry(mexico);
+
+        europe.addCountry(poland);
+        europe.addCountry(germany);
+        europe.addCountry(france);
+
+        world.addContinent(europe);
+        world.addContinent(northAmerica);
+        //When
+        BigDecimal totalPop = world.getContinents().stream()
+                .flatMap(continent -> continent.getCountries().stream())
+                .map(country -> country.getPeopleQuantity())
+                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
+
+        /*BigDecimal estimated = world.getPeopleQuantity();*/
 
         //Then
-        assertEquals(613000000, estimated);
+        assertEquals(new BigDecimal("613000000"), totalPop);
     }
 
 }

@@ -1,10 +1,16 @@
 package com.kodilla.stream.world;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Continent {
 
-    public Set<Country> countries = new HashSet<>();
+    private final List<Country> countries = new ArrayList<>();
 
+    final List<Country> getCountries() {
+        return countries;
+    }
+    public void addCountry(Country country) {
+        countries.add(country);
+    }
 }
