@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SecondChallengeTestSuite {
 
     @Test
-    void TestNotThrowingExceptions() {
+    void testNotThrowingExceptions() {
         //Given
         SecondChallenge secondChallenge = new SecondChallenge();
         //When&THen
@@ -16,7 +16,7 @@ public class SecondChallengeTestSuite {
     }
 
     @Test
-    void TestExceptions() {
+    void testExceptions() {
         //Given
         SecondChallenge secondChallenge = new SecondChallenge();
         //When&Then
