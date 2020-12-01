@@ -13,6 +13,7 @@ public class ProducerList {
     public ArrayList<Producer> getProducersList() {
         return producersList;
     }
+
     public Producer getProducer(String producerName){
         for (int i = 0; i < producersList.size(); i++)
             if (producersList.get(i).getName().equals(producerName)) j = i;
