@@ -1,24 +1,27 @@
 package com.kodilla.good.patterns.challenges;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
 
 public class Order {
-    private final List<OrderPosition> order = new ArrayList<>();
+    private Customer customer;
+    private Product product;
+    private LocalDateTime deliveryTime;
 
-
-    private final Date orderCreationDate = new Date(System.currentTimeMillis());
-
-    public void addPositionToOrder(OrderPosition orderPosition) {
-        order.add(orderPosition);
+    public Order(Customer customer, Product product, LocalDateTime deliveryTime) {
+        this.customer = customer;
+        this.product = product;
+        this.deliveryTime = deliveryTime;
     }
 
-    public Date getOrderCreationDate() {
-        return orderCreationDate;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public List<OrderPosition> getOrder() {
-        return order;
+    public Product getProduct() {
+        return product;
+    }
+
+    public LocalDateTime getDeliveryTime() {
+        return deliveryTime;
     }
 }
