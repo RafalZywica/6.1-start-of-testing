@@ -1,9 +1,17 @@
 package com.kodilla.good.patterns.challenges;
 
-import java.time.LocalDateTime;
+public class ProductOrderService {
+    public static void main(String[] args) {
+        Example example = new Example();
+        Order order = example.retrieve();
 
-public interface ProductOrderService {
-    public static boolean order(Customer customer, LocalDateTime deliveryTime) {
-        return true;
+        OrderProcessor orderProcessor = new OrderProcessor(new OrderServicePaymentOnline(), new OrderRepositoryGaming(), new MessageService());
+        OrderDto orderDto = orderProcessor.process(order);
+
+        if (orderDto.isOrdered()) {
+            System.out.println(orderDto.getProduct().getProductName() + " has been ordered by " + orderDto.getCustomer().getName() + ".");
+        } else {
+            System.out.println("The order can't be completed");
+        }
     }
 }
