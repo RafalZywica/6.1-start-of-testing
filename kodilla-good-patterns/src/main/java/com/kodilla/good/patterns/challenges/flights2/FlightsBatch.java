@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.challenges.flights2;
 
+import java.util.List;
+
 public class FlightsBatch {
 
     public static void main(String[] args) {
@@ -17,5 +19,9 @@ public class FlightsBatch {
         for (Flight flight : flightDatabase.getFlightList()) {
             System.out.println(flight);
         }
+        SearchEngine searchEngine = new SearchEngine();
+        List<Flight> departingFromWarsaw = searchEngine.searchByDeparture(flightDatabase, airport1);
+        System.out.println("\n" + "Flights departing from Warsaw Airport\n");
+        for (Flight flight: departingFromWarsaw) System.out.println(flight);
     }
 }

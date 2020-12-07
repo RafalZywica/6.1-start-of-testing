@@ -9,10 +9,6 @@ public class FlightDatabase {
     private IndirectFlight indirectFlight;
     private Flight checkFlight;
 
-    public void addIndirectFlight(Flight flight){
-        flightList.add(flight);
-    }
-
     public void addFlight(Flight flight) {
 
         flightList.add(flight);
@@ -22,7 +18,8 @@ public class FlightDatabase {
             for (Flight flight2: flightList) {
                 if (flight1.getArrivalAirport() != flight2.getArrivalAirport() && checkFlight.getArrivalAirport() == flight2.getDepartureAirport() && flight1.getFlightNumber() != flight2.getFlightNumber()) {
                     indirectFlight = new IndirectFlight(checkFlight.getFlightNumber() + "+" + flight2.getFlightNumber(), checkFlight.getDepartureAirport(), checkFlight.getArrivalAirport(), flight2.getArrivalAirport());
-                    flightList.add(indirectFlight);
+                    System.out.println(indirectFlight);
+                    /*flightList.add(indirectFlight);*/
                 }
              /*if (checkFlight.getArrivalAirport() == flight2.getDepartureAirport() && checkFlight.getFlightNumber() != flight2.getFlightNumber()) {
                  flightList.add(indirectFlight);
