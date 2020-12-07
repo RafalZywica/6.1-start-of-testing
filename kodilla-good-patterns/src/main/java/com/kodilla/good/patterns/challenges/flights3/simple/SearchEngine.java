@@ -28,7 +28,6 @@ public class SearchEngine {
                 })*/
         List<Flight> foundFlights = new ArrayList<>();
         for (Flight flight: flightList.getFlightList()) {
-            Flight checkFlight = flight;
             for (Flight flight1: flightList.getFlightList()){
                 if (flight.getArrival().equals(transition) && flight.getArrival().equals(flight1.getDeparture()) && !flight.getDeparture().equals(flight1.getArrival())) {
                     foundFlights.add(flight);
