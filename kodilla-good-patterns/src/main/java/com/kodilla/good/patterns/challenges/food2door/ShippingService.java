@@ -7,10 +7,11 @@ public class ShippingService implements Service {
 
     private final List<Order> orderList = new ArrayList<>();
 
-    public void addNewOrder(Customer customer, OrderPosition orderPosition) {
-        Order order = new Order(customer, orderPosition, false);
+    public void addNewOrder(Producer producer, Customer customer, OrderPosition orderPosition) {
+        Order order = new Order(producer, customer, orderPosition, false);
         orderList.add(order);
     }
+
 
     @Override
     public List<Order> getOrderList() {

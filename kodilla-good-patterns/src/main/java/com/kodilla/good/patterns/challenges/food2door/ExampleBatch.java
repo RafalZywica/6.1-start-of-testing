@@ -5,6 +5,7 @@ import com.kodilla.good.patterns.challenges.food2door.producers.GlutenFreeShop;
 import com.kodilla.good.patterns.challenges.food2door.producers.HealthyShop;
 
 public class ExampleBatch {
+
     public void exampleData() {
 
         Customer customer1 = new Customer("Hieronim", "Warszawa", "Krucza 3", "00-134");
@@ -22,14 +23,20 @@ public class ExampleBatch {
         GlutenFreeShop glutenFreeShop = new GlutenFreeShop();
         HealthyShop healthyShop = new HealthyShop();
         ShippingService shippingService = new ShippingService();
+
+
         extraFoodShop.addOrderPosition(orderPosition3);
         glutenFreeShop.addOrderPosition(orderPosition2);
         healthyShop.addOrderPosition(orderPosition1);
         healthyShop.addOrderPosition(orderPosition4);
-        shippingService.addNewOrder(customer1, orderPosition1);
-        shippingService.addNewOrder(customer2, orderPosition3);
-        shippingService.addNewOrder(customer3, orderPosition4);
-        shippingService.addNewOrder(customer1, orderPosition2);
+
+        shippingService.addNewOrder(healthyShop, customer1, orderPosition1);
+        shippingService.addNewOrder(healthyShop, customer2, orderPosition3);
+        shippingService.addNewOrder(glutenFreeShop, customer3, orderPosition4);
+        shippingService.addNewOrder(extraFoodShop, customer3, orderPosition2);
+
+        healthyShop.process(shippingService);
+        extraFoodShop.process(shippingService);
 
         System.out.println(shippingService.getActiveOrders().size());
     }
