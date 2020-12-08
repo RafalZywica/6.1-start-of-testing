@@ -3,8 +3,8 @@ package com.kodilla.good.patterns.challenges.food2door;
 import java.util.Objects;
 
 public class OrderPosition {
-    private Product product;
-    private int quantity;
+    private final Product product;
+    private final int quantity;
 
     public OrderPosition(Product product, int quantity) {
         this.product = product;
