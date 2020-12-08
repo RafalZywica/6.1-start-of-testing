@@ -30,8 +30,8 @@ public class ExampleFlightsTest {
         System.out.println("\nSearch for arrivals to Frankfurt:\n ");
         foundFlights = searchEngine.searchByArrival(flightList, "Frankfurt");
         for(Flight flight: foundFlights) System.out.println(flight);
-        System.out.println("\nSearch for transitions through Frankfurt:\n");
-        foundFlights = searchEngine.searchByTransition(flightList, "Frankfurt");
+        System.out.println("\nSearch for flights from Warsaw to London:\n");
+        foundFlights = searchEngine.searchByDepartureAndArrival(flightList, "Warsaw", "London");
         for(Flight flight: foundFlights) System.out.println(flight);
     }
 }
