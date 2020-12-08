@@ -15,15 +15,16 @@ public class ExampleBatch {
         Product product2 = new Product("Yoghurt", 4);
         Product product3 = new Product("Pasta", 15);
         Product product4 = new Product("Orange juice", 10);
-        OrderPosition orderPosition1 = new OrderPosition(product1, 5);
-        OrderPosition orderPosition2 = new OrderPosition(product2, 3);
-        OrderPosition orderPosition3 = new OrderPosition(product3, 2);
-        OrderPosition orderPosition4 = new OrderPosition(product4, 6);
+
         ExtraFoodShop extraFoodShop = new ExtraFoodShop();
         GlutenFreeShop glutenFreeShop = new GlutenFreeShop();
         HealthyShop healthyShop = new HealthyShop();
         ShippingService shippingService = new ShippingService();
 
+        OrderPosition orderPosition1 = new OrderPosition(product1, 5);
+        OrderPosition orderPosition2 = new OrderPosition(product2, 3);
+        OrderPosition orderPosition3 = new OrderPosition(product3, 2);
+        OrderPosition orderPosition4 = new OrderPosition(product4, 6);
 
         extraFoodShop.addOrderPosition(orderPosition3);
         glutenFreeShop.addOrderPosition(orderPosition2);
@@ -31,9 +32,13 @@ public class ExampleBatch {
         healthyShop.addOrderPosition(orderPosition4);
 
         shippingService.addNewOrder(healthyShop, customer1, orderPosition1);
-        shippingService.addNewOrder(healthyShop, customer2, orderPosition3);
-        shippingService.addNewOrder(glutenFreeShop, customer3, orderPosition4);
-        shippingService.addNewOrder(extraFoodShop, customer3, orderPosition2);
+        shippingService.addNewOrder(extraFoodShop, customer2, orderPosition3);
+        shippingService.addNewOrder(healthyShop, customer3, orderPosition4);
+        shippingService.addNewOrder(glutenFreeShop, customer3, orderPosition2);
+
+        System.out.println("HealthyShop order list:\n" + shippingService.getOrderListOfProducer(healthyShop));
+        System.out.println("ExtraFoodShop order list:\n" + shippingService.getOrderListOfProducer(extraFoodShop));
+        System.out.println("GlutenFoodShop order list:\n" + shippingService.getOrderListOfProducer(glutenFreeShop));
 
         healthyShop.process(shippingService);
         extraFoodShop.process(shippingService);

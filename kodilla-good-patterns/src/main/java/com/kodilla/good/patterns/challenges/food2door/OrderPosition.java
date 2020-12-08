@@ -32,4 +32,12 @@ public class OrderPosition {
     public int hashCode() {
         return Objects.hash(product, quantity);
     }
+
+    @Override
+    public String toString() {
+        return "OrderPosition{" +
+                "product=" + product +
+                ", quantity=" + quantity +
+                '}';
+    }
 }

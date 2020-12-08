@@ -8,10 +8,19 @@ public class ShippingService implements Service {
     private final List<Order> orderList = new ArrayList<>();
 
     public void addNewOrder(Producer producer, Customer customer, OrderPosition orderPosition) {
+        /*orderPosition.getProducer().addOrderPosition(orderPosition);*/
         Order order = new Order(producer, customer, orderPosition, false);
         orderList.add(order);
     }
 
+    public List<Order> getOrderListOfProducer(Producer producer) {
+        List<Order> orderListOfProducer = new ArrayList<>();
+        for (Order order: orderList){
+            if (order.getProducer() == producer){
+                orderListOfProducer.add(order);
+            }
+        } return orderListOfProducer;
+    }
 
     @Override
     public List<Order> getOrderList() {

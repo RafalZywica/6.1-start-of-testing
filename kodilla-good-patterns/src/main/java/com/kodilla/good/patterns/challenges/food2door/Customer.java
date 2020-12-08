@@ -29,4 +29,11 @@ public class Customer {
     public String getPostCode() {
         return postCode;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name +
+                '}';
+    }
 }
