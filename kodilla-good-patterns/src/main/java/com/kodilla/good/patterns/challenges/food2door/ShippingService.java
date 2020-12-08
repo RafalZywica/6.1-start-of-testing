@@ -22,6 +22,11 @@ public class ShippingService implements Service {
         } return orderListOfProducer;
     }
 
+    public boolean process(Producer producer) {
+        ShipOrder shipOrder = new ShipOrder();
+        return shipOrder.isDelivered(producer, orderList, producer.getOrderPositionList());
+    }
+
     @Override
     public List<Order> getOrderList() {
         return orderList;

@@ -13,11 +13,15 @@ public class ExtraFoodShop implements Producer {
         orderPositionList.add(orderPosition);
     }
 
-    @Override
+    public String getNAME() {
+        return NAME;
+    }
+
+    /*@Override
     public boolean process(Service service) {
         ShipOrder shipOrder = new ShipOrder();
-        return shipOrder.isDelivered(NAME, service, orderPositionList);
-    }
+        return shipOrder.isDelivered(getNAME(), service, orderPositionList);
+    }*/
 
     @Override
     public List<OrderPosition> getOrderPositionList() {

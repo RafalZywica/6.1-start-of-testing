@@ -40,8 +40,8 @@ public class ExampleBatch {
         System.out.println("ExtraFoodShop order list:\n" + shippingService.getOrderListOfProducer(extraFoodShop));
         System.out.println("GlutenFoodShop order list:\n" + shippingService.getOrderListOfProducer(glutenFreeShop));
 
-        healthyShop.process(shippingService);
-        extraFoodShop.process(shippingService);
+        shippingService.process(healthyShop);
+        shippingService.process(extraFoodShop);
 
         System.out.println(shippingService.getActiveOrders().size());
     }
