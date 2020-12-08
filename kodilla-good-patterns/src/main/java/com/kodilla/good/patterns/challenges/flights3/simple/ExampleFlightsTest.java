@@ -11,6 +11,8 @@ public class ExampleFlightsTest {
         Flight flight3 = new Flight("Frankfurt", "London");
         Flight flight4 = new Flight("London", "New York");
         Flight flight5 = new Flight("Frankfurt", "Warsaw");
+        Flight flight6 = new Flight("Warsaw", "Hamburg");
+        Flight flight7 = new Flight("Hamburg", "London");
 
         FlightList flightList = new FlightList();
 
@@ -21,6 +23,8 @@ public class ExampleFlightsTest {
         flightList.addFlight(flight3);
         flightList.addFlight(flight4);
         flightList.addFlight(flight5);
+        flightList.addFlight(flight6);
+        flightList.addFlight(flight7);
 
         List<Flight> foundFlights;
 
