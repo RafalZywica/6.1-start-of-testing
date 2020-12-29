@@ -20,7 +20,7 @@ public class BoardTestSuite {
         Boolean result;
         //When
         System.out.println("Done List: \n" + taskList);
-        if (taskList == null) {
+        if (taskList.getTasks().size() != 0) {
             result = false;
         } else {
             result = true;
@@ -38,7 +38,7 @@ public class BoardTestSuite {
         Boolean result;
         //When
         System.out.println("In Progress List: \n" + taskList);
-        if (taskList == null) {
+        if (taskList.getTasks().size() != 0) {
             result = false;
         } else {
             result = true;
@@ -56,7 +56,7 @@ public class BoardTestSuite {
         Boolean result;
         //When
         System.out.println("To do List \n " + taskList);
-        if (taskList == null) {
+        if (taskList.getTasks().size() != 0) {
             result = false;
         } else {
             result = true;
