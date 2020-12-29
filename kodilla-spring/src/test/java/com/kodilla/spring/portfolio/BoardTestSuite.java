@@ -5,6 +5,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 public class BoardTestSuite {
 
@@ -51,10 +53,16 @@ public class BoardTestSuite {
                 new AnnotationConfigApplicationContext("com.kodilla.spring.portfolio");
         Board board = context.getBean(Board.class);
         TaskList taskList = board.getDoneList();
+        Boolean result;
         //When
         taskList.addTask("Do Laundry");
+        if (taskList.getTasks().contains("Do Laundry")) {
+            result = true;
+        } else {
+            result = false;
+        }
         //Then
-        //donothing
+        assertEquals(true, result);
     }
 
 

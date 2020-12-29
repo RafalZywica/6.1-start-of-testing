@@ -16,4 +16,8 @@ public class TaskList {
         for (String task1: tasks)
             System.out.println(task);
     }
+
+    public List<String> getTasks() {
+        return tasks;
+    }
 }
