@@ -17,10 +17,16 @@ public class BoardTestSuite {
                 new AnnotationConfigApplicationContext("com.kodilla.spring.portfolio");
         Board board = context.getBean(Board.class);
         TaskList taskList = board.getDoneList();
+        Boolean result;
         //When
         System.out.println("Done List: \n" + taskList);
+        if (taskList == null) {
+            result = false;
+        } else {
+            result = true;
+        }
         //Then
-        //donothing
+        assertEquals(true, result);
     }
     @Test
     void testInProgressList() {
@@ -29,10 +35,16 @@ public class BoardTestSuite {
                 new AnnotationConfigApplicationContext("com.kodilla.spring.portfolio");
         Board board = context.getBean(Board.class);
         TaskList taskList = board.getInProgressList();
+        Boolean result;
         //When
         System.out.println("In Progress List: \n" + taskList);
+        if (taskList == null) {
+            result = false;
+        } else {
+            result = true;
+        }
         //Then
-        //donothing
+        assertEquals(true, result);
     }
     @Test
     void testToDoList() {
@@ -41,10 +53,16 @@ public class BoardTestSuite {
                 new AnnotationConfigApplicationContext("com.kodilla.spring.portfolio");
         Board board = context.getBean(Board.class);
         TaskList taskList = board.getToDoList();
+        Boolean result;
         //When
         System.out.println("To do List \n " + taskList);
+        if (taskList == null) {
+            result = false;
+        } else {
+            result = true;
+        }
         //Then
-        //donothing
+        assertEquals(true, result);
     }
     @Test
     void testAddTask() {
