@@ -22,6 +22,19 @@ public class UserTestSuite {
         assertEquals("Facebook", johnnyShares);
         assertEquals("Twitter", bettyShares);
         assertEquals("Snapchat", hannahShares);
-
+    }
+    @Test
+    public void testIndividualSharingStrategy() {
+        //Given
+        User johnny = new Millenials("Johnny");
+        //When
+        String johnnyShares = johnny.publish();
+        System.out.println("Johnny shared on " + johnnyShares);
+        johnny.setSocialPublisher(new SnapchatPublisher());
+        String johnnyIndividuallyShares = johnny.publish();
+        System.out.println("Johnny individually shared on" + johnnyIndividuallyShares);
+        //Then
+        assertEquals("Facebook", johnnyShares);
+        assertEquals("Snapchat", johnnyIndividuallyShares);
     }
 }
