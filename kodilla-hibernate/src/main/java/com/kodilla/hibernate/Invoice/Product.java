@@ -34,12 +34,8 @@ public final class Product {
         return name;
     }
 
-    @OneToMany(
-            targetEntity = Item.class,
-            mappedBy = "product",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
+    @OneToMany
+    @JoinColumn(name = "ITEM_ID")
     public List<Item> getItems() {
         return items;
     }
