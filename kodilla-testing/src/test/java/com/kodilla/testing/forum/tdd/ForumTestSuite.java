@@ -67,7 +67,7 @@ class ForumTestSuite {
         //Then
         Assertions.assertEquals(thePost, retrievedPost);
     }
-    @Test
+    /*@Test
     void testGetComment() {
         //Given
         ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
@@ -83,7 +83,7 @@ class ForumTestSuite {
 
         //Then
         Assertions.assertEquals(theComment, retrievedComment);
-    }
+    }*/
     @Test
     void testRemovePostNotExisting() {
         //Given
@@ -127,7 +127,7 @@ class ForumTestSuite {
         Assertions.assertTrue(result);
         Assertions.assertEquals(0, forumUser.getPostsQuantity());
     }
-    @Test
+    /*@Test
     void testRemoveComment() {
         //Given
         ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
@@ -144,5 +144,5 @@ class ForumTestSuite {
         //Then
         Assertions.assertTrue(result);
         Assertions.assertEquals(0, forumUser.getCommentsQuantity());
-    }
+    }*/
 }
