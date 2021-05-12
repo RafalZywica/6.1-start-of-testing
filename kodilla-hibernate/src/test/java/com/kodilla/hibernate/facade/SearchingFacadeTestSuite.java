@@ -25,7 +25,7 @@ public class SearchingFacadeTestSuite {
     SearchingFacade searchingFacade;
 
     @Test
-    public void testSearchignCompanyFacade() throws SearchingException {
+    public void testSearchingCompanyFacade() throws SearchingException {
         //Given
         Company company1 = new Company("Company 1");
         Company company2 = new Company("Company 2");
@@ -64,7 +64,7 @@ public class SearchingFacadeTestSuite {
         List<Employee> employeeList = searchingFacade.findEmployee("1");
 
         //Then
-        assertEquals(3, employeeList.size());
+        assertEquals(2, employeeList.size());
 
         //CleanUp
         try {
