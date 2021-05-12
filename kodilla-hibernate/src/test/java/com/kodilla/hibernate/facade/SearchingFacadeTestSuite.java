@@ -68,7 +68,7 @@ public class SearchingFacadeTestSuite {
 
         //CleanUp
         try {
-            companyDao.deleteAll();
+            employeeDao.deleteAll();
         } catch (Exception e) {
             //Do nothing
         }
