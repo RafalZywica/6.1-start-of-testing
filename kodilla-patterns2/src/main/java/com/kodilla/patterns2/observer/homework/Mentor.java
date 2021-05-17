@@ -10,7 +10,7 @@ public class Mentor implements HomeworkObserver {
 
     @Override
     public void update(TasksQueue tasksQueue) {
-        System.out.println(name + ": New tasks from " + tasksQueue + "\n" +
+        System.out.println(name + ": New tasks from " + tasksQueue.getName() + "\n" +
                 " (total: " + tasksQueue.getTasks().size() + " tasks)");
         updateCount++;
     }
