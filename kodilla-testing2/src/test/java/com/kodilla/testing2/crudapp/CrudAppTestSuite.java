@@ -11,8 +11,6 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 public class CrudAppTestSuite {
 
     private static final String BASE_URL = "https://rafalzywica.github.io/";
