@@ -14,7 +14,7 @@ public class FacebookTestingApp{
     public static final String XPATH_SELECT_MONTH = "//div[contains(@class, \"_5k_5\")]/span/span/select[2]";
     public static final String XPATH_SELECT_YEAR = "//div[contains(@class, \"_5k_5\")]/span/span/select[3]";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
         driver.get("https://www.facebook.com/");
 
@@ -22,7 +22,8 @@ public class FacebookTestingApp{
 
         driver.findElement(By.xpath(XPATH_CREATE_NEW_ACCOUNT)).click();
 
-        while (!driver.findElement(By.xpath(XPATH_WAIT_FOR)).isDisplayed());
+        /*while (!driver.findElement(By.xpath(XPATH_WAIT_FOR)).isDisplayed());*/
+        Thread.sleep(2000);
 
         WebElement selectDayCombo = driver.findElement(By.xpath(XPATH_SELECT_DAY));
         Select selectDayBoard = new Select(selectDayCombo);
